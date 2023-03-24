@@ -27,15 +27,15 @@ The Work Day Scheduler Website uses the following technologies:
   *  Font Awesome
   *  Google Fonts
 
-Usage:
+## Usage:
 To use the Work Day Scheduler Website, simply open this link:
 
 [Website](https://lohmarr.github.io/05-Workday-Schedule-Ubiquitous/)
 
  The current date will be displayed at the top of the page, and time-blocks will be displayed for each hour of the work day from 9am to 5pm. To add a task, simply click on the text area for the corresponding hour, type in your task, and click the "save" button. The app will save your task to local storage, and the background color of the time-block will be updated to indicate whether it is in the past, present, or future. To edit or delete a task, simply click on the corresponding text area, make your changes, and click the "save" button again. To delete a task, simply clear the text area and click the "save" button. The app will automatically update the background color of the time-block depending on whether it is in the past, present, or future.
 
-Credits:
+## Credits:
 The Work Day Scheduler Website was created by Lohmar as an exercise for the UNCC School of Professional Studies course on Full-Stack Web Development.
 
-License:
+## License:
 The Work Day Scheduler Website is licensed under the MIT License.
