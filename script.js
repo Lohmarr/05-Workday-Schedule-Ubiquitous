@@ -21,3 +21,41 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+
+$(function () {
+  // Add a listener for click events on the save button.
+  $(".saveBtn").on("click", function () {
+    // Get the id of the containing time-block
+    const id = $(this).closest(".time-block").attr("id");
+    // Get the user input from the textarea element within the containing time-block
+    const description = $(this).siblings(".description").val();
+    // Save the user input in local storage using the id as a key
+    localStorage.setItem(id, description);
+  });
+
+  // Get the current hour in 24-hour time using Day.js library
+  const currentHour = dayjs().hour();
+
+  // Apply the past, present, or future class to each time-block
+  $(".time-block").each(function () {
+    const hour = parseInt($(this).attr("id").split("-")[1]);
+    if (hour < currentHour) {
+      $(this).addClass("past");
+    } else if (hour === currentHour) {
+      $(this).addClass("present");
+    } else {
+      $(this).addClass("future");
+    }
+  });
+
+  // Get any user input that was saved in localStorage and set the values of the corresponding textarea elements
+  $(".time-block").each(function () {
+    const id = $(this).attr("id");
+    const description = localStorage.getItem(id);
+    $(this).find(".description").val(description);
+  });
+
+  // Display the current date in the header of the page using Day.js library
+  const currentDate = dayjs().format("dddd, MMMM D");
+  $("#currentDay").text(currentDate);
+});
